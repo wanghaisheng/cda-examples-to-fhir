@@ -1,1 +1,594 @@
-<TODO>
+<feed xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/2005/Atom">
+   <title>A sample FHIR bundle</title>
+   <id>urn:uuid:07bff130-7c7e-11e3-baa7-0800200c9a66</id>
+   
+   <updated>2014-01-10T09:00:00-08:00</updated>     <!-- Time the bundle was built -->
+   
+   <!-- Author is required by the Atom spec. FHIR doesn't use it. The CDA Sample does not indicate the name-->
+   <author>
+       <name>Author's name</name>
+   </author>
+   <!-- This tag specifies unambiguously that this is a FHIR document bundle. If it's a document, we'll need a composition. Since the CDA sample is intended to illustrate a section as part of a document, the composition is ommitted from this sample.-->
+   <category  term="http://hl7.org/fhir/tag/document" scheme="http://hl7.org/fhir/tag" />
+   
+   <entry>
+       <title>ALLERGIES AND ADVERSE REACTIONS</title>
+       <id>cid:24082b69-e29d-498f-afd9-8f400a5d2eb9</id>
+       <updated>2014-01-10T09:00:00-08:00</updated>
+       <content type="text/xml">
+           <List xmlns="http://hl7.org/fhir">
+               <text>
+                   <!--Note: since this was a conversion of a CDA section, the text elements were only changed to XHTML equivalents. This text should probably be revised to not include parts not found in the FHIR entries (e.g. Severity of allergy) ... especially since status value="generated", implying the text was derived from entries--> 
+                   <status value="generated" />
+                   <div xmlns="http://www.w3.org/1999/xhtml">
+                        <table border="1" width="100%">
+                            <thead>
+                                <tr>
+                                    <th>Substance</th>
+                                    <th>Reaction</th>
+                                    <th>Severity of Reaction</th>
+                                    <th>Severity of Allergy/Intolerance</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <span>Erythromycin 0.02 MG/MG Topical Gel</span>
+                                    </td>
+                                    <td>
+                                        <span>Hives</span>
+                                    </td>
+                                    <td>
+                                        <span>Moderate</span>
+                                    </td>
+                                    <td>
+                                        <span>Moderate to severe</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span>Bactrim</span>
+                                    </td>
+                                    <td>
+                                        <span>Tongue swelling</span>
+                                    </td>
+                                    <td>
+                                        <span>Mild to moderate</span>
+                                    </td>
+                                    <td>
+                                        <span>Moderate</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span>Peanut</span>
+                                    </td>
+                                    <td>
+                                        <span>Anaphylaxis</span>
+                                    </td>
+                                    <td>
+                                        <span>Severe</span>
+                                    </td>
+                                    <td>
+                                        <span>Severe</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span>Felis Catus Dander</span>
+                                    </td>
+                                    <td>
+                                        <span>Eye Swelling</span>
+                                    </td>
+                                    <td>
+                                        <span>Mild</span>
+                                    </td>
+                                    <td>
+                                        <span>Mild to moderate</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+               </text>
+               <entry>
+                   <item>
+                       <reference value="cid:e429d29a-7214-4bbc-98f1-dca7dedebe41"/>
+                       <display value="Anapylaxis Reaction to Peanuts"/>
+                   </item>
+               </entry>
+               <entry>
+                   <item>
+                       <reference value="cid:5155592a-8a55-4585-8105-08c2f04debda"/>
+                       <display value="Urticaria Reaction to Erythromycin"/>
+                   </item>
+               </entry>
+               <entry>
+                   <item>
+                       <reference value="cid:1aed348b-0c93-434f-aaf5-9b41d6304a61"/>
+                       <display value="Eye Swelling Reaction to Cat Dander"/>
+                   </item>
+               </entry>
+               <entry>
+                   <item>
+                       <reference value="141ff36a-9256-4153-b421-a8f1da62f719"/>
+                       <display value="Tongue Swelling Reaction to Bactrim"/>
+                   </item>
+               </entry>
+           </List>
+       </content>
+   </entry>
+
+   <!-- Subject (Patient) -->
+   <entry>
+       <title>The Patient</title>
+       <id>cid:3f134db0-7a32-11e3-981f-0800200c9a66</id>
+       <updated>2014-01-10T09:00:00-08:00</updated>
+       
+       <content type="text/xml">
+           <Patient xmlns="http://hl7.org/fhir">
+               <text>
+                   <status value="generated"/>
+                   <div xmlns="http://www.w3.org/1999/xhtml">Patient Name</div>
+               </text>
+               <!-- Not specified in the CDA Sample -->
+           </Patient>
+       </content>
+   </entry>
+   
+   <!-- Author (Practitioner) -->
+   <entry>
+       <title>The document author - Doctor Dave</title>
+       <id>cid:0bdcc9f2-f7f0-4805-8bf4-2e24538dbe5f</id>
+       <updated>2014-01-10T09:00:00-08:00</updated>
+       
+       <content type="text/xml">
+           <Practitioner xmlns="http://hl7.org/fhir">
+               <identifier>
+                   <system value ="urn:oid:2.16.840.1.113883.4.6" />
+                   <value value="66778899" />
+               </identifier>
+               <!-- No other details of Practitioner are provided in the CDA Sample -->
+           </Practitioner>
+       </content>
+   </entry>
+   <entry>
+       <title>Urticaria Reaction to Erythromycin</title>
+       <id>cid:5155592a-8a55-4585-8105-08c2f04debda</id>
+       <updated>2014-01-10T09:00:00-08:00</updated>
+       <content type="text/xml">
+           
+           <AllergyIntolerance xmlns="http://hl7.org/fhir">
+               
+               <contained>
+                   <Medication id="med1">
+                       <name value="Bactrim" />
+                       
+                           <coding>
+                               <!--RxNorm-->
+                               <system value="urn:2.16.840.1.113883.6.88"/>
+                               <code value="310152"/>
+                               <display value="Erythromycin 0.02 MG/MG Topical Gel"/>
+                           </coding>
+                       
+                   </Medication>
+               </contained>
+               
+               <contained>
+                   <AdverseReaction id="react1">
+                       
+                       <!--We'll need to omit the reaction text, CDA allows embedded text for contained elements (the CDA has an entryRelationship/observation describing the severity, but FHIR does not allow text within a contained Resource-->
+                        <!--We could alternatively place the text in the AllergyIntolerance Resource, but what would require us to generate new text that combines the concepts in this Resource... but that is probably outside the spirit of this sample.-->
+                        <!--
+                        <text>
+                            <div xmlns="http://www.w3.org/1999/xhtml">Urticaria</div>
+                        </text>
+                        -->
+                       
+                       <!--Can't do high/low-->
+                           <!--<effectiveTime>
+                          <low value="199512011205-0800"/>
+                          <high value="199512020835-0800"/>
+                          </effectiveTime>-->
+                       <date value="1995-12-01T12:05:00-08:00"/>
+                       
+                       <subject>
+                           <reference value="cid:3f134db0-7a32-11e3-981f-0800200c9a66" />
+                       </subject>
+                       
+                       <didNotOccurFlag value ="false" />
+                       
+                       <recorder>
+                           <reference value="cid:0bdcc9f2-f7f0-4805-8bf4-2e24538dbe5f" />
+                       </recorder>
+                       
+                       <symptom>
+                           
+                               <coding>
+                                   <system value="http://snomed.info/sct"/>
+                                   <code value="126485001"/>
+                                   <display value="Urticaria"/>
+                               </coding>
+                               <text value="Urticaria"/>
+                           
+                           <!--In this case, the cda sample severity is code="6736007" displayName="moderate"-->
+                           <!--There doesn't seem to be a way to describe the severity of the allergy, just the reaction-->
+                           <severity value="moderate"/>
+                       </symptom>
+                   </AdverseReaction>
+               </contained>
+               
+               
+               <!--CDA Note: not sure which (I took from the observation/id) entry/act/id... or entry/act/entryRelationship/observation/id. entry/act describes the id for the allergy act... entry/act/entryrelationship/obsevation is the actual allergy -->
+               <identifier>
+                   <value value="urn:uuid:4ffd3420-0f60-425c-aaca-6255c8d8c890" />
+               </identifier>
+               
+               <!--Drug allergy-->
+               <identifier>
+                   <label value ="Drug allergy" />
+                   <system value="http://snomed.info/sct"/>
+                   <value value="416098002"/>
+               </identifier>
+               
+               <!--Severe == high?-->
+               <!--CDA Note: the CDA differentiates from the severity of the reaction and the severity of the allergy... but I don't see a FHIR equivalent.-->
+               <criticality value="high" />
+               
+               <!--CDA Note: we're inferring a bit here (because of snomed food allergy code)-->
+               <sensitivityType value="allergy" />
+               
+               <!--Act.effectivetime-->
+               <recordedDate value="1998-05-01T11:45:00-08:00"/>
+               
+               <!--CDA Note: entry/act/statuscode denotes that the allergy is active and needs to be monitored. it doesn't really map 1:1 to confirmed-->
+               <status value="confirmed" />
+               
+               <subject>
+                   <reference value="cid:3f134db0-7a32-11e3-981f-0800200c9a66" />
+               </subject>
+               
+               <!--CDA Note: the author of the act-->
+               <recorder>
+                   <reference value="cid:0bdcc9f2-f7f0-4805-8bf4-2e24538dbe5f" />
+               </recorder>  
+               
+               <substance>
+                   <reference value="#med1"/>
+                   <display value="Bactrim"/>
+               </substance>
+               
+               
+               <reaction>
+                   <reference value="#react1"/>
+                   <display value="Urticaria"/>
+               </reaction>
+               
+               <sensitivityTest></sensitivityTest>
+               
+           </AllergyIntolerance>
+       </content>
+   </entry>
+   <entry>
+       <title>Tongue Swelling Reaction to Bactrim</title>
+       <id>cid:141ff36a-9256-4153-b421-a8f1da62f719</id>
+       <updated>2014-01-10T09:00:00-08:00</updated>
+       <content type="text/xml">
+           <AllergyIntolerance xmlns="http://hl7.org/fhir">
+               <contained>
+                   <Medication id="med1">
+                       <name value="Bactrim" />
+                       
+                           <coding>
+                               <!--RxNorm-->
+                               <system value="urn:2.16.840.1.113883.6.88"/>
+                               <code value="151399"/>
+                               <display value="Bactrim"/>
+                           </coding>
+                       
+                   </Medication>
+               </contained>
+               
+               <contained>
+                   <AdverseReaction id="react1">
+                                         
+                       <!--cda entry/act/entryrelationship/observation/entryrelationship[severity]/observation/effectivetime -->
+                       <!--<effectiveTime>
+                                <low value="19921001"/>
+                                <high value="19921001"/>
+                        </effectiveTime>-->
+                       <!--Chose the low time-->
+                       <date value="1992-10-01"/>
+                       
+                       <subject>
+                           <reference value="cid:0bdcc9f2-f7f0-4805-8bf4-2e24538dbe5f" />
+                       </subject>
+                       
+                       <didNotOccurFlag value ="false" />
+                       
+                       <recorder>
+                           <reference value="cid:0bdcc9f2-f7f0-4805-8bf4-2e24538dbe5f" />
+                       </recorder>
+                       
+                       <symptom>
+                           
+                               <coding>
+                                   <system value="http://snomed.info/sct"/>
+                                   <code value="421262002"/>
+                                   <display value="Tongue swelling"/>
+                               </coding>
+                               <text value="Tongue swelling"/>
+                           
+                           <!--CDA tongue swelling observation.entryrelationship.observation.value [severity]. In this case, the cda sample severity is code="371923003" displayName="Mild to moderate"-->
+                           <severity value="moderate"/>
+                       </symptom>
+                   </AdverseReaction>
+               </contained>
+               
+               
+               <!--CDA Note: not sure which (I took from the observation/id) entry/act/id... or entry/act/entryRelationship/observation/id. entry/act describes the id for the allergy act... entry/act/entryrelationship/obsevation is the actual allergy -->
+               <identifier>
+                   <value value="urn:uuid:4ffd3420-0f60-425c-aaca-6255c8d8c890" />
+               </identifier>
+               
+               <!--Drug allergy-->
+               <identifier>
+                   <label value ="Drug allergy" />
+                   <system value="http://snomed.info/sct"/>
+                   <value value="416098002"/>
+               </identifier>
+               
+               <!--Is this what we should map to criticality?-->
+               <!--CDA Note: the CDA differentiates from the severity of the reaction and the severity of the allergy... but I don't see a FHIR equivalent.-->
+               <!--<value xsi:type="CD" code="371924009" displayName="Moderate to severe" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>-->
+               <criticality value="severe" />
+               
+               <!--CDA Note: we're inferring a bit here (because of snomed drug allergy code)-->
+               <sensitivityType value="allergy" />
+               
+               <!--Act.effectivetime-->
+               <recordedDate value="2008-08-01T09:15:00-08:00"/>
+               
+               <!--CDA Note: entry/act/statuscode denotes that the allergy is active and needs to be monitored. it doesn't really map 1:1 to confirmed-->
+               <status value="confirmed" />
+               
+               <subject>
+                   <reference value="cid:0bdcc9f2-f7f0-4805-8bf4-2e24538dbe5f" />
+               </subject>
+               
+               <!--CDA Note: the author of the act-->
+               <recorder>
+                   <reference value="cid:0bdcc9f2-f7f0-4805-8bf4-2e24538dbe5f" />
+               </recorder>
+               
+               <substance>
+                   <reference value="#med1"/>
+                   <display value="Bactrim"/>
+               </substance>
+               
+               <reaction>
+                   <reference value="#react1"/>
+                   <display value="Tongue swelling"/>
+               </reaction>
+               
+               <sensitivityTest></sensitivityTest>
+               
+           </AllergyIntolerance>
+       </content>
+   </entry>  
+   <entry>
+       <title>Anapylaxis Reaction to Peanuts</title>
+       <id>cid:e429d29a-7214-4bbc-98f1-dca7dedebe41</id>
+       <updated>2014-01-10T09:00:00-08:00</updated>
+       <content type="text/xml">
+           <AllergyIntolerance xmlns="http://hl7.org/fhir">
+               
+               <contained>
+                   <Substance id="sub1">
+                       <type>
+                           <coding>
+                               <!--UNII-->
+                               <system value="urn:oid:2.16.840.1.113883.4.9"/>
+                               <code value="QE1QX61B99R"/>
+                               <display value="PEANUT"/>
+                           </coding>
+                       </type>
+                   </Substance>
+               </contained>
+               
+               <contained>
+                   <AdverseReaction id="react1">
+
+                       <!--effective time of CDA allergy reaction observation. Not exactly when you noticed the allergy.. but when you noticed the reaction-->
+                       <date value="1988"/>
+                       
+                       <subject>
+                           <reference value="cid:3f134db0-7a32-11e3-981f-0800200c9a66" />
+                       </subject>
+                       
+                       <didNotOccurFlag value ="false" />
+                       
+                       <recorder>
+                           <reference value="cid:0bdcc9f2-f7f0-4805-8bf4-2e24538dbe5f" />
+                       </recorder>
+                       
+                       <symptom>
+                           
+                               <coding>
+                                   <system value="http://snomed.info/sct"/>
+                                   <code value="39579001"/>
+                                   <display value="Anaphylaxis"/>
+                               </coding>
+                               <text value="Anaphylaxis reaction"/>
+                           
+                           <!--CDA alaphylaxis observation.entryrelationship.observation.value [severity]. In this case, the cda sample severity is "Severe" (snomed 24484000)-->
+                           <severity value="severe"/>
+                       </symptom>
+
+                   </AdverseReaction>
+               </contained>
+               
+               !--CDA Note: not sure which (I took from the observation/id) entry/act/id... or entry/act/entryRelationship/observation/id. entry/act describes the id for the allergy act... entry/act/entryrelationship/obsevation is the actual allergy -->
+               <identifier>
+                   <value value="urn:uuid:e70b70c6-48d2-47af-8138-9470ed249bab" />
+               </identifier>
+               
+               <!--Food allergy-->
+               <identifier>
+                   <label value ="Food Allergy" />
+                   <system value="http://snomed.info/sct"/>
+                   <value value="414285001"/>
+               </identifier>
+               
+               <!--Severe == high?-->
+               <!--CDA Note: the CDA differentiates from the severity of the reaction and the severity of the allergy... but I don't see a FHIR equivalent.-->
+               <criticality value="high" />
+               
+               <!--CDA Note: we're inferring a bit here (because of snomed food allergy code)-->
+               <sensitivityType value="allergy" />
+               
+               <!--Act.effectivetime-->
+               <recordedDate value="1998-05-01T11:45:00-08:00"/>
+               
+               <!--CDA Note: entry/act/statuscode denotes that the allergy is active and needs to be monitored. it doesn't really map 1:1 to confirmed-->
+               <status value="confirmed" />
+               
+               <subject>
+                   <reference value="cid:3f134db0-7a32-11e3-981f-0800200c9a66" />
+               </subject>
+               
+               <!--CDA Note: the author of the act-->
+               <recorder>
+                   <reference value="cid:0bdcc9f2-f7f0-4805-8bf4-2e24538dbe5f" />
+               </recorder>  
+               
+               <substance>
+                   <reference value="#sub1"/>
+                   <display value="Peanut"/>
+               </substance>
+               
+               
+               <reaction>
+                   <reference value="#react1"/>
+                   <display value="Anapylaxis"/>
+               </reaction>
+               
+               <sensitivityTest></sensitivityTest>
+               
+           </AllergyIntolerance>
+       </content>
+   </entry>
+   <entry>
+       <title>Eye Swelling Reaction to Cat Dander</title>
+       <id>cid:1aed348b-0c93-434f-aaf5-9b41d6304a61</id>
+       <updated>2014-01-10T09:00:00-08:00</updated>
+       <content type="text/xml">
+             <AllergyIntolerance xmlns="http://hl7.org/fhir">
+               
+               <!--Cat dander substance (entry.act.entryRelationship.observation.participant.participantRole[classCode="MANU"].playingEntity[classCode="MMAT"].code
+                    Note too, that entry.act.entryRelationship.observation.effectiveTime.low indicates allergy onset, and I can't seem to find a place to map that... Adverse Reaction seems to have a time that indicates when the reaction occurred.-->
+               <contained>
+                   <Substance id="sub1">
+                       <type>
+                           <coding>
+                               <system value="urn:oid:2.16.840.1.113883.4.9"/>
+                               <code value="ZDNZAC0L08"/>
+                               <display value="Felis catus dander"/>
+                           </coding>
+                       </type>
+                   </Substance>
+                   
+                   <!--Note that there does not seem an appropriate place to put entry.act.entryRelationship.observation.entryRelationship[typeCode="SUBJ"] (describing the severity of the allergy) SEE note at criticality node below-->
+                   
+               </contained>
+               
+               <!--Eye Swelling Reaction (entry.act.entryRelationship.observation.entryRelationship[typeCode="MFST"].observation)-->
+               <contained>
+                   <AdverseReaction id="react1">
+                       
+                       <!--A reaction to cat dander was observed for 3 days in January 2009. We don't seem to have an equivalent way of representing it.-->
+                       <!--<effectiveTime>
+                            <low value="20090116"/>
+                            <high value="2009019"/>
+                          </effectiveTime>-->
+                       <date value="2009-01-16"/> <!--Since there's no way to do effectiveTime.low/high that I can see, I took the low'\-->
+                       
+                       <!--Making a safe assumption-->
+                       <subject>
+                           <reference value="cid:0bdcc9f2-f7f0-4805-8bf4-2e24538dbe5f" />
+                       </subject>
+                       
+                       <!--Node CDA negation indicators, so...-->
+                       <didNotOccurFlag value ="false" />
+                       
+                       <!--Since there's no other author specified, we'll go up the tree until we find one... and that's at entry.act.author-->
+                       <recorder>
+                           <reference value="cid:0bdcc9f2-f7f0-4805-8bf4-2e24538dbe5f" />
+                       </recorder>
+                       
+                       <!--why not in identifier?-->
+                       <symptom>
+                           
+                           <coding>
+                               <system value="http://snomed.info/sct"/>
+                               <code value="45177002"/>
+                               <display value="Eye swelling"/>
+                           </coding>
+                           <text value="Eye swelling"/>                           
+                           
+                           <!--entryrelationship[typeCode="SUBJ"].observation.value == 255604002 [mild severity]-->
+                           <severity value="mild"/>
+                       </symptom>
+                   </AdverseReaction>
+               </contained>
+               
+               <!--CDA entry. should both act.id and entry.act.entryRelationship.observation.id be mapped?-->
+               <!--I took act.id entry/act describes the id for the allergy act... entry/act/entryrelationship/obsevation is the actual allergy-->
+               <identifier>
+                   <value value="urn:uuid:dd8f01c9-fb0d-4744-aeda-75e7f208dca7" />
+               </identifier>
+               
+               <!--Allergy to substance (entry.act.entryRelationship.observation.value)-->
+               <identifier>
+                   <label value ="Allergy to substance" />
+                   <system value="http://snomed.info/sct"/>
+                   <value value="419199007"/>
+               </identifier>
+               
+               <!--the CDA differentiates from the severity of the reaction and the severity of the allergy... but I don't see a FHIR equivalent.-->
+               <criticality value="" />
+               
+               <!--we're inferring a bit here (because of snomed allergy code)-->
+               <sensitivityType value="allergy" />
+               
+               <!--entry.act.effectivetime.low-->
+               <recordedDate value="1998-05-01T11:45:00-08:00"/>
+               
+               <!--CDA Note: entry.act.statuscode="active" denotes that the allergy is active and needs to be monitored. It doesn't seem to really map 1:1 to confirmed-->
+               <status value="confirmed" />
+               
+               <subject>
+                   <reference value="cid:0bdcc9f2-f7f0-4805-8bf4-2e24538dbe5f" />
+               </subject>
+               
+               <!--CDA Note: the author of the act... in this case the same author of this entire section-->
+               <recorder>
+                   <reference value="cid:0bdcc9f2-f7f0-4805-8bf4-2e24538dbe5f" />
+               </recorder>
+               
+               <substance>
+                   <reference value="#sub1"/>
+                   <display value="Cat Dander"/>
+               </substance>
+               
+               <reaction>
+                   <reference value="#react1"/>
+                   <display value="Eye swelling"/>
+               </reaction>
+               
+               <sensitivityTest></sensitivityTest>
+               
+           </AllergyIntolerance>
+       </content>
+   </entry>
+</feed>

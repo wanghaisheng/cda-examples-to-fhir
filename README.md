@@ -1,4 +1,10 @@
+#  将HL7 CHINA发布的CDA文档实例转换成FHIR格式                   
+
+# 将卫生部发布的共享文档实例转换为FHIR格式              
+
 # Translating the agreed CDA examples to FHIR
+[AnnotatedExamples](https://github.com/aswain/AnnotatedExamples/blob/XML-Examples/Domain_Allergies_XMLExamples.xml)
+[FHIR Allergy Sample](http://wiki.hl7.org/index.php?title=FHIR_Allergy_Sample)               
 
 ## Installation
 ```
